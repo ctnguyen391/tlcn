@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Supro Minimal</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&amp;display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/page/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/page/plugins/bootstrap4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/page/plugins/owl-carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="/page/plugins/slick/slick/slick.css">
+  <link rel="stylesheet" href="/page/plugins/lightGallery-master/dist/css/lightgallery.min.css">
+  <link rel="stylesheet" href="/page/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+  <link rel="stylesheet" href="/page/plugins/jquery-ui/jquery-ui.min.css">
+  <link rel="stylesheet" href="/page/plugins/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="/page/fonts/Linearicons/Linearicons/Font/demo-files/demo.css">
+  <link rel="stylesheet" href="/page/css/style.css">
+  <style>
+    .page-item.active .page-link{
+    z-index: 1;
+    color: #fff;
+    background-color: gray;
+    border-color: gray;
+    }
+  </style>
+  <%- style %>
+</head>
+
+<body>
+  <header class="header header--standard" data-sticky="true">
+    <div class="header__left"><a class="ps-logo" href="/"><img src="/page/img/logo.svg" alt=""></a></div>
+    <div class="header__right">
+      <div class="header__navigation">
+        <ul class="menu">
+          <li class="menu-item-has-children has-mega-menu"><a href="/">Trang chủ</a><span class="sub-toggle"></span>
+          </li>
+          <li class="menu-item-has-children has-mega-menu"><a href="/cua-hang">Cửa hàng</a><span
+              class="sub-toggle"></span>
+          </li>
+          <li class="menu-item-has-children"><a href="/tin-tuc">Tin Tức</a><span class="sub-toggle"></span>
+          </li>
+          <li><a href="/lien-he">Liên hệ</a></li>
+          <li><a href="/gioi-thieu">Giới thiệu</a></li>
+        </ul>
+      </div>
+      <div class="header__container">
+        <div class="header__search">
+          <form class="ps-form--header-search" action="/cua-hang/tim-kiem" method="get">
+            <input class="form-control" name="q" type="text" placeholder="Tìm kiếm sản phẩm ...">
+            <button><i class="icon-magnifier"></i></button>
+          </form><a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a>
+        </div>
+        <div class="header__actions">
+          <a class="header__cart ps-toggle--sidebar" href="#cart">
+            <i class="icon-cart"></i><span class="cart-count-item">2</span></a>
+            <% if (!customer) { %>
+               <a class="header__user" href="/dang-nhap"><i class="icon-user"></i></a>
+             <% } %>
+             <% if (customer) { %>
+              <a class="header__user" href="/ho-so">
+                <img style="width: 30px; border-radius: 50%; border: 1px solid lightblue;" src="<%= customer.avatar %>" >
+              </a>
+            <% } %>
+          <% if (customer) { %>
+            <ul style="margin-left:10px">
+              <li><a style="font-size: 12px;" href="/dang-xuat">Đăng xuất</a></li>
+            </ul>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </header>
+  <header class="header header--mobile" data-sticky="true">
+    <div class="header__left"><a class="ps-logo" href="/"><img src="/page/img/logo.png" alt=""></a></div>
+    <div class="header__right">
+      <% if (!customer) { %>
+        <a class="header__user" href="/dang-nhap"><i class="icon-user"></i></a>
+      <% } %>
+      <% if (customer) { %>
+        <a class="header__user" href="#">
+          <img style="width: 30px; border-radius: 50%; border: 1px solid lightblue;" src="<%= customer.avatar %>" >
+        </a>
+     <% } %>
+   <% if (customer) { %>
+     <ul  style="margin-left:10px">
+       <li><a style="font-size: 12px;" href="/dang-xuat">Đăng xuất</a></li>
+     </ul>
+   <% } %>
+    </div>
+  </header>
+
+  <%- body %>
+
+    <div class="ps-footer--2 ps-footer--instagram">
+      <div class="container">
+        <div class="ps-footer__content">
+
+        </div>
+      </div>
+      <div class="ps-footer__bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+              <p class="ps-footer__copyright">&copy; 2021 <strong>Supro</strong>. All rights reserved.</p>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+              <p class="ps-footer__links"><a class="ps-link--line" href="#">Privacy Policy</a><a class="ps-link--line"
+                  href="#">Term of Use</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="back2top"><i class="pe-7s-angle-up"></i></div>
+    <div class="ps-site-overlay"></div>
+    <div id="loader-wrapper">
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <div class="ps-search" id="site-search"><a class="ps-btn--close" href="#"></a>
+      <div class="ps-search__content">
+        <form class="ps-form--primary-search" action="https://nouthemes.net/html/supro/do_action" method="post">
+          <input class="form-control" type="text" placeholder="Search for...">
+          <button><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="ps-panel--sidebar" id="navigation-mobile">
+      <div class="ps-panel__header"><a class="ps-panel__close" href="#"><i class="icon-cross"></i></a></div>
+      <div class="ps-panel__content">
+        <nav class="ps-navigation--mobile">
+          <div class="ps-navigation__language-currency">
+            <div class="row">
+              <div class="col-6">
+                <ul class="ps-list">
+                  <li class="active"><a href="#">English</a></li>
+                  <li><a href="#">Italian</a></li>
+                  <li><a href="#">German</a></li>
+                  <li><a href="#">French</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="ps-list">
+                  <li class="active"><a href="#">USD</a></li>
+                  <li><a href="#">GPB</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="ps-navigation__menu">
+            <ul class="menu--desktop">
+              <li><a href="/">Trang chủ</a></li>
+              <li><a href="/cua-hang">Cửa hàng</a></li>
+              <li><a href="/tin-tuc">Tin tức</a></li>
+              <li><a href="/lien-he">Liên hệ</a></li>
+            </ul>
+          </div>
+          <figure class="ps-navigation__bottom">
+            <figcaption>Contact Us</figcaption>
+            <p>69 Halsey St, Ny 10002, New York, United States <a
+                href="https://nouthemes.net/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="added8ddddc2dfd983cec8c3d9c8dfedd8c3c8dfc283cec2">[email&#160;protected]</a> (0091) 8547
+              632521</p>
+          </figure>
+        </nav>
+      </div>
+    </div>
+    <div class="ps-panel--sidebar" id="cart">
+      <div class="ps-panel__header"><a class="ps-panel__close" href="#"><i class="icon-cross"></i></a></div>
+      <div class="ps-panel__content">
+        <div class="ps-cart--mini">
+          <div class="ps-cart__content">
+            <div class="ps-cart__items" id="mini-cart-items">
+            </div>
+            <div class="ps-cart__footer">
+              <h3>Tổng tiền:<strong id="header_cart-total">0</strong></h3>
+              <figure><a class="ps-btn ps-btn--outline" href="/gio-hang">Xem giỏ hàng</a><a class="ps-btn ps-btn--black"
+                  href="/thanh-toan">Thanh toán</a></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /page/plugins-->
+    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="/page/plugins/jquery-1.12.4.min.js"></script>
+    <script src="/page/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/page/plugins/bootstrap4/js/bootstrap.min.js"></script>
+    <script src="/page/plugins/imagesloaded.pkgd.js"></script>
+    <script src="/page/plugins/masonry.pkgd.min.js"></script>
+    <script src="/page/plugins/jquery.matchHeight-min.js"></script>
+    <script src="/page/plugins/slick/slick/slick.min.js"></script>
+    <script src="/page/plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
+    <script src="/page/plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
+    <script src="/page/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/page/plugins/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
+    <script src="/page/plugins/select2/dist/js/select2.full.min.js"></script>
+    <script src="/page/js/notify.min.js"></script>
+    <script src="/page/js/main.js"></script>
+    <script src="/page/js/helper.js"></script>
+    <script src="/page/js/app.js"></script>
+    <%- script %>
+</body>
+
+</html>

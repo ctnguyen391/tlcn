@@ -1,0 +1,131 @@
+<div class="ps-page--default">
+  <div class="container">
+    <div class="ps-page__header">
+      <h3>Giỏ hàng</h3>
+      <ul class="ps-breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop-default.html">Shop</a></li>
+        <li>Cart</li>
+      </ul>
+    </div>
+    <div class="ps-page__content">
+      <div class="ps-shopping-cart" id="cart-content">
+        <div class="table-responsive">
+          <table class="table ps-table ps-table--shopping-cart">
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+              <th>Thành tiền</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-list-main">
+
+            </tbody>
+          </table>
+        </div>
+        <p id="cart-list-alert"></p>
+        <div class="ps-section__content">
+          <div class="ps-section__actions">
+            <figure><a class="ps-btn ps-btn--outline" href="/cua-hang">Tiếp tục mua hàng</a>
+              <!-- <a class="ps-btn ps-btn--outline" href="#">Cập nhật</a> -->
+            </figure>
+          </div>
+          <div class="ps-block--checkout-total">
+            <div class="ps-block__top">
+              <h4>Tổng tiền <span id="cart-list-total">0</span></h4>
+              <div class="ps-block__shipping">
+                <h5>Shipping</h5>
+                <div class="ps-radio">
+                  <input checked class="form-control" type="radio" id="shipping-1" name="shipping" />
+                  <label for="shipping-1">Free Shipping</label>
+                </div>
+                <div class="ps-radio">
+                  <input checked class="form-control" type="radio" id="shipping-2" name="shipping" />
+                  <label for="shipping-2">Paypal</label>
+                </div>
+              </div>
+              <div class="ps-block__total">
+                <h3>Tổng tiền<span id="checkout-total">0</span></h3>
+              </div>
+            </div>
+            <% if (customer) { %>
+              <div class="ps-block__bottom">
+                <a class="ps-btn ps-btn--black" id="cart-checkout">
+                  Thanh toán
+                </a>
+              </div>
+              <% } %>
+          </div>
+        </div>
+        <% if (!customer) { %>
+        <div class="text-right mt-5">
+          <a href="/dang-nhap?url_back=gio-hang">Vui lòng <span style="color: blue;">đăng nhập</span> để đặt hàng</a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ps-footer--2 ps-footer--instagram">
+  <div class="container">
+    <div class="ps-footer__content">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+          <aside class="widget widget_footer widget_align-right">
+            <h3 class="widget-title">Help & Information</h3>
+            <ul class="ps-list--line">
+              <li><a href="#">Track Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Premier Delivery</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+          <aside class="widget widget_footer widget_align-right">
+            <h3 class="widget-title">About Supro</h3>
+            <ul class="ps-list--line">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Coporate</a></li>
+              <li><a href="#">Investors</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+          <aside class="widget widget_footer widget_align-right">
+            <h3 class="widget-title">Online Shop</h3>
+            <ul class="ps-list--line">
+              <li><a href="#">Shoes</a></li>
+              <li><a href="#">Bags</a></li>
+              <li><a href="#">Wallets</a></li>
+              <li><a href="#">Belts</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+          <aside class="widget widget_footer widget_align-right">
+            <h3 class="widget-title">Language</h3>
+            <select class="ps-select">
+              <option value="1">English</option>
+              <option value="2">Italian</option>
+              <option value="3">Germany</option>
+              <option value="4">French</option>
+            </select>
+          </aside>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 ">
+          <aside class="widget widget_footer widget_align-right">
+            <h3 class="widget-title">Currency</h3>
+            <select class="ps-select">
+              <option value="1">USD</option>
+              <option value="2">GBP</option>
+            </select>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
